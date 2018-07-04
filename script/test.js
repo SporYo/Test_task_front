@@ -3,14 +3,14 @@ window.onload = function what() { // Событие onload на window сраб�
     $.ajax({
         url: 'https://raw.githubusercontent.com/SporYo/Test_task_front/master/products.json',
         dataType: 'json',
-        success: function(cardsData) {
-          
+        success: function (cardsData) {
+            document.getElementById("products_section").innerHTML = template(cardsData);
         }
-      });
+    });
 
     function template(cardsData) {
         return cardsData.map(card =>
-            `<div class='products_page pg_0'>
+                `<div class='products_page pg_0'>
             <div class='product product_horizontal'>
                     <span class='product_code'>Код:${card.code}</span>
                     <div class='product_status_tooltip_container'>
@@ -93,11 +93,9 @@ window.onload = function what() { // Событие onload на window сраб�
                 </span>
             </div>
         </div>`
-        )
-        .join('')
+            )
+            .join('')
     }
-
-    document.getElementById("products_section").innerHTML = template(cardsData);
 
     $(document).ready(function () {
         $('.up').click(function () {
