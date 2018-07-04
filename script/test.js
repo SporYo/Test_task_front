@@ -5,6 +5,22 @@ window.onload = function onLoad() {
         dataType: 'json',
         success: function (cardsData) {
             document.getElementById("products_section").innerHTML = template(cardsData);
+
+            $('.up').click(function () {
+                var $input = $(this).parent().find('input');
+                $input.val(parseInt($input.val()) + 1);
+                $input.change();
+                return false;
+            });
+            $('.down').click(function () {
+                var $input = $(this).parent().find('input');
+                var count = parseInt($input.val()) - 1;
+                count = count < 1 ? 1 : count;
+                $input.val(count);
+                $input.change();
+                return false;
+            });
+            
         }
     });
 
@@ -94,22 +110,6 @@ window.onload = function onLoad() {
                   </div>
               </div>`
         ).join('')
-
-        $('.up').click(function () {
-            var $input = $(this).parent().find('input');
-            $input.val(parseInt($input.val()) + 1);
-            $input.change();
-            return false;
-        });
-        $('.down').click(function () {
-            var $input = $(this).parent().find('input');
-            var count = parseInt($input.val()) - 1;
-            count = count < 1 ? 1 : count;
-            $input.val(count);
-            $input.change();
-            return false;
-        });
-        
     }
 
 };
