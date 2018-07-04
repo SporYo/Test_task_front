@@ -2311,7 +2311,7 @@ window.onload = function what() { // Событие onload на window сраб�
                     </div>  
                     <div class='product_photo'>
                         <a href='#' class='url--link product__link'>
-                            <img src="${card.primaryImageUrl}'_220x220_1.jpg'">
+                            <img src="${card.primaryImageUrl.slice(0, -4)}_220x220_1.jpg">
                         </a>
                     </div>
                     <div class='product_description'>
