@@ -2302,15 +2302,17 @@ window.onload = function what() { // Событие onload на window сраб�
         }
     ]
 
-    const output = cardsData.map(card => 
-        `<div class='products_page pg_0'>
+    const output = cardsData.map(card =>
+            `<div class='products_page pg_0'>
             <div class='product product_horizontal'>
-                    <span class='product_code'>Код:${card.code}</span> 
-                    <div class='product_status_tooltip_container'> 
+                    <span class='product_code'>Код:${card.code}</span>
+                    <div class='product_status_tooltip_container'>
                         <span class='product_status'>Наличие</span>
                     </div>  
                     <div class='product_photo'>
-                        <a href='#' class='url--link product__link'><img src=${card.primaryImageUrl}></a>
+                        <a href='#' class='url--link product__link'>
+                            <img src="${card.primaryImageUrl}'_220x220_1.jpg'">
+                        </a>
                     </div>
                     <div class='product_description'>
                         <a href='#' class='product__link'>${card.title}</a>
@@ -2384,8 +2386,8 @@ window.onload = function what() { // Событие onload на window сраб�
                 </span>
             </div>
         </div>`
-)
-.join('')
+        )
+        .join('')
 
     document.getElementById("products_section").innerHTML = output;
 
@@ -2407,4 +2409,3 @@ window.onload = function what() { // Событие onload на window сраб�
     });
 
 };
-
