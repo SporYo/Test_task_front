@@ -21,6 +21,9 @@ window.onload = function onLoad() {
                 return false;
             });
             
+            $(document).on("click", '.unit--select', function () {
+                $(this).addClass('unit--active').siblings().removeClass('unit--active');
+            });
         }
     });
 
